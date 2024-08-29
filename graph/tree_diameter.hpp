@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <queue>
+#include "graph_template.hpp"
 
 template<class T> int tree_diameter(Graph<T> &graph) {
     int n = (int)(graph.size());
