@@ -16,11 +16,12 @@ template<class T> struct BipartiteGraph {
         bool ok = true;
         auto dfs = [&](auto f, int v, int p, int color) -> void {
             if (!ok) return;
+            if (colors[v] != -1) return;
             colors[v] = color;
             for (auto c: graph[v]) {
                 if (c == p) continue;
                 // もし二部グラフが作成できない場合
-                if (colors[c] != -1) ok = false;
+                if (colors[c] == color) ok = false;
                 f(f, c, v, 1 - color);
             }
             return;
