@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/lowest_common_ancestor.hpp
       title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     - icon: ':warning:'
@@ -32,6 +32,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/dijkstra_1.test.cpp
       title: verify/graph/dijkstra_1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/lowest_common_ancestor_1.test.cpp
+      title: verify/graph/lowest_common_ancestor_1.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter_1.test.cpp
       title: verify/graph/tree_diameter_1.test.cpp

@@ -5,10 +5,13 @@ data:
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/lowest_common_ancestor_1.test.cpp
+    title: verify/graph/lowest_common_ancestor_1.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     links: []
@@ -103,8 +106,9 @@ data:
   path: graph/lowest_common_ancestor.hpp
   requiredBy: []
   timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/lowest_common_ancestor_1.test.cpp
 documentation_of: graph/lowest_common_ancestor.hpp
 layout: document
 redirect_from:

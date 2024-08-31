@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/lowest_common_ancestor.hpp
     title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
   - icon: ':warning:'
@@ -26,6 +26,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/dijkstra_1.test.cpp
     title: verify/graph/dijkstra_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/lowest_common_ancestor_1.test.cpp
+    title: verify/graph/lowest_common_ancestor_1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter_1.test.cpp
     title: verify/graph/tree_diameter_1.test.cpp
@@ -84,6 +87,7 @@ data:
   verifiedWith:
   - verify/graph/tree_diameter_1.test.cpp
   - verify/graph/dijkstra_1.test.cpp
+  - verify/graph/lowest_common_ancestor_1.test.cpp
 documentation_of: graph/graph_template.hpp
 layout: document
 redirect_from:
