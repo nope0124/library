@@ -5,10 +5,16 @@ data:
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/topological_sort_1.test.cpp
+    title: verify/graph/topological_sort_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/topological_sort_2.test.cpp
+    title: verify/graph/topological_sort_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\
       \u30C8)"
@@ -35,31 +41,34 @@ data:
     \u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)\n */\ntemplate<class T> std::vector<int>\
     \ topological_sort(Graph<T> &graph) {\n    int n = (int)(graph.size());\n    std::vector<int>\
     \ res, indeg(n, 0);\n\n    for (int i = 0; i < n; i++) {\n        for (auto c:\
-    \ graph[i]) {\n            indeg[c]++;\n        }\n    }\n\n    std::queue<int>\
-    \ que;\n    for (int i = 0; i < n; i++) {\n        if (indeg[i] == 0) que.push(i);\n\
-    \    }\n\n    while (!que.empty()) {\n        auto v = que.front(); que.pop();\n\
-    \        res.push_back(v);\n        for (auto c: graph[v]) {\n            indeg[c]--;\n\
-    \            assert(indeg[c] >= 0);\n            if (indeg[c] == 0) que.push(c);\n\
-    \        }\n    }\n\n    return res;\n}\n"
+    \ graph[i]) {\n            indeg[c]++;\n        }\n    }\n\n    std::priority_queue<int,\
+    \ std::vector<int>, std::greater<int>> que;\n    for (int i = 0; i < n; i++) {\n\
+    \        if (indeg[i] == 0) que.push(i);\n    }\n\n    while (!que.empty()) {\n\
+    \        auto v = que.top(); que.pop();\n        res.push_back(v);\n        for\
+    \ (auto c: graph[v]) {\n            indeg[c]--;\n            assert(indeg[c] >=\
+    \ 0);\n            if (indeg[c] == 0) que.push(c);\n        }\n    }\n\n    return\
+    \ res;\n}\n"
   code: "#pragma once\n\n#include <vector>\n#include <queue>\n#include \"graph_template.hpp\"\
     \n\n/**\n * @brief Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\
     \u30FC\u30C8)\n */\ntemplate<class T> std::vector<int> topological_sort(Graph<T>\
     \ &graph) {\n    int n = (int)(graph.size());\n    std::vector<int> res, indeg(n,\
     \ 0);\n\n    for (int i = 0; i < n; i++) {\n        for (auto c: graph[i]) {\n\
-    \            indeg[c]++;\n        }\n    }\n\n    std::queue<int> que;\n    for\
-    \ (int i = 0; i < n; i++) {\n        if (indeg[i] == 0) que.push(i);\n    }\n\n\
-    \    while (!que.empty()) {\n        auto v = que.front(); que.pop();\n      \
-    \  res.push_back(v);\n        for (auto c: graph[v]) {\n            indeg[c]--;\n\
-    \            assert(indeg[c] >= 0);\n            if (indeg[c] == 0) que.push(c);\n\
-    \        }\n    }\n\n    return res;\n}"
+    \            indeg[c]++;\n        }\n    }\n\n    std::priority_queue<int, std::vector<int>,\
+    \ std::greater<int>> que;\n    for (int i = 0; i < n; i++) {\n        if (indeg[i]\
+    \ == 0) que.push(i);\n    }\n\n    while (!que.empty()) {\n        auto v = que.top();\
+    \ que.pop();\n        res.push_back(v);\n        for (auto c: graph[v]) {\n  \
+    \          indeg[c]--;\n            assert(indeg[c] >= 0);\n            if (indeg[c]\
+    \ == 0) que.push(c);\n        }\n    }\n\n    return res;\n}"
   dependsOn:
   - graph/graph_template.hpp
   isVerificationFile: false
   path: graph/topological_sort.hpp
   requiredBy: []
-  timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-09-01 04:51:53+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/topological_sort_1.test.cpp
+  - verify/graph/topological_sort_2.test.cpp
 documentation_of: graph/topological_sort.hpp
 layout: document
 redirect_from:

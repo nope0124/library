@@ -15,7 +15,7 @@ data:
     path: graph/strongly_connected_component.hpp
     title: "Strongly Connected Component (\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
       )"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological_sort.hpp
     title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
@@ -32,6 +32,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/strongly_connected_component_1.test.cpp
     title: verify/graph/strongly_connected_component_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/topological_sort_1.test.cpp
+    title: verify/graph/topological_sort_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/topological_sort_2.test.cpp
+    title: verify/graph/topological_sort_2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter_1.test.cpp
     title: verify/graph/tree_diameter_1.test.cpp
@@ -91,6 +97,8 @@ data:
   - verify/graph/tree_diameter_1.test.cpp
   - verify/graph/strongly_connected_component_1.test.cpp
   - verify/graph/dijkstra_1.test.cpp
+  - verify/graph/topological_sort_1.test.cpp
+  - verify/graph/topological_sort_2.test.cpp
   - verify/graph/lowest_common_ancestor_1.test.cpp
 documentation_of: graph/graph_template.hpp
 layout: document
