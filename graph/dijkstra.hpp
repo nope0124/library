@@ -59,12 +59,12 @@ template<class T> struct Dijkstra {
         }
     }
 
-    std::vector<int> get_path(int end) {
+    std::vector<int> getPath(int end) {
         std::vector<int> path;
         for (int cur = end; cur != -1; cur = parents[cur]) {
             path.push_back(cur);
         }
         reverse(path.begin(), path.end());
+        return path;
     }
-
 };
