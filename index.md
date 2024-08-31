@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/lowest_common_ancestor.hpp
       title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/strongly_connected_component.hpp
       title: "Strongly Connected Component (\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
         )"
@@ -35,6 +35,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/lowest_common_ancestor_1.test.cpp
       title: verify/graph/lowest_common_ancestor_1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/strongly_connected_component_1.test.cpp
+      title: verify/graph/strongly_connected_component_1.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter_1.test.cpp
       title: verify/graph/tree_diameter_1.test.cpp

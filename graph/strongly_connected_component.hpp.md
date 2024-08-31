@@ -5,10 +5,13 @@ data:
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/strongly_connected_component_1.test.cpp
+    title: verify/graph/strongly_connected_component_1.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Strongly Connected Component (\u5F37\u9023\u7D50\u6210\u5206\u5206\
       \u89E3)"
@@ -66,8 +69,9 @@ data:
   path: graph/strongly_connected_component.hpp
   requiredBy: []
   timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/strongly_connected_component_1.test.cpp
 documentation_of: graph/strongly_connected_component.hpp
 layout: document
 redirect_from:
