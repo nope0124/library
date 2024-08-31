@@ -67,8 +67,7 @@ jobs:
       run: |
         rustup set profile minimal
         rustup install 1.80.0
-        rustup override set 1.80.0
-        cargo update  # 依存関係を最新に更新
+        rustup override set nightly
         
     # required by cargo-udeps
     - name: Set up Rust (nightly)
