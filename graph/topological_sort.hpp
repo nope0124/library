@@ -17,13 +17,13 @@ template<class T> std::vector<int> topological_sort(Graph<T> &graph) {
         }
     }
 
-    std::queue<int> que;
+    std::priority_queue<int, std::vector<int>, std::greater<int>> que;
     for (int i = 0; i < n; i++) {
         if (indeg[i] == 0) que.push(i);
     }
 
     while (!que.empty()) {
-        auto v = que.front(); que.pop();
+        auto v = que.top(); que.pop();
         res.push_back(v);
         for (auto c: graph[v]) {
             indeg[c]--;
