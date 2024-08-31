@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/bipartite_graph.hpp
     title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_ao
+    PROBLEM: https://atcoder.jp/contests/abc327/tasks/abc327_d
     links:
-    - https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_ao
+    - https://atcoder.jp/contests/abc327/tasks/abc327_d
   bundledCode: "#line 1 \"verify/graph/bipartite_graph_1.test.cpp\"\n#define PROBLEM\
-    \ \"https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_ao\"\
-    \n#include <bits/stdc++.h>\n#line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"\
-    graph/graph_template.hpp\"\n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\
-    \u30EC\u30FC\u30C8\n */\ntemplate<class T> struct Edge {\n    int to;\n    T cost;\n\
-    \n    Edge(int to, T cost) : to(to), cost(cost) {}\n};\n\ntemplate<class T> struct\
-    \ Graph {\n    int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int\
-    \ n) : n(n), graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[]\
-    \ (int i) { return graph[i]; }\n    size_t size() const { return graph.size();\
-    \ }\n\n    std::vector<int> preorder, postorder;\n\n    /**\n     * @brief \u884C\
-    \u304D\u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\u914D\u5217\
-    \u3092\u4F5C\u308B\n     */\n    void calculateOrder() {\n        std::vector<bool>\
+    \ \"https://atcoder.jp/contests/abc327/tasks/abc327_d\"\n#include <bits/stdc++.h>\n\
+    #line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\
+    \n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
+    template<class T> struct Edge {\n    int to;\n    T cost;\n\n    Edge(int to,\
+    \ T cost) : to(to), cost(cost) {}\n};\n\ntemplate<class T> struct Graph {\n  \
+    \  int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int n) : n(n),\
+    \ graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[] (int i)\
+    \ { return graph[i]; }\n    size_t size() const { return graph.size(); }\n\n \
+    \   std::vector<int> preorder, postorder;\n\n    /**\n     * @brief \u884C\u304D\
+    \u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\u914D\u5217\u3092\
+    \u4F5C\u308B\n     */\n    void calculateOrder() {\n        std::vector<bool>\
     \ reached(n, false);\n        auto dfs = [&](auto f, int v, int p) -> void {\n\
     \            if (reached[v]) return;\n            reached[v] = true;\n       \
     \     preorder.push_back(v);\n            for (auto c: graph[v]) {\n         \
@@ -56,27 +56,29 @@ data:
     \        }\n        blackCnt = (int)(black.size());\n        whiteCnt = (int)(white.size());\n\
     \        return;\n    }\n};\n#line 5 \"verify/graph/bipartite_graph_1.test.cpp\"\
     \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
-    \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M; cin >> N >> M;\n    Graph<ll>\
-    \ graph(N);\n    rep (i, M) {\n        ll a, b; cin >> a >> b; a--; b--;\n   \
-    \     graph[a].push_back(b);\n        graph[b].push_back(a);\n    }\n\n    BipartiteGraph<ll>\
-    \ bg(graph);\n    if (bg.isBipartite) cout << \"Yes\" << endl;\n    else cout\
-    \ << \"No\" << endl;\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_ao\"\
-    \n#include <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"\
-    graph/bipartite_graph.hpp\"\nusing namespace std;\ntypedef long long int ll;\n\
-    #define rep(i, N) for(ll i = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M;\
-    \ cin >> N >> M;\n    Graph<ll> graph(N);\n    rep (i, M) {\n        ll a, b;\
-    \ cin >> a >> b; a--; b--;\n        graph[a].push_back(b);\n        graph[b].push_back(a);\n\
-    \    }\n\n    BipartiteGraph<ll> bg(graph);\n    if (bg.isBipartite) cout << \"\
-    Yes\" << endl;\n    else cout << \"No\" << endl;\n\n    return 0;\n}\n"
+    \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M; cin >> N >> M;\n    vector<ll>\
+    \ A(M), B(M);\n    Graph<ll> graph(N);\n    rep (i, M) cin >> A[i], A[i]--;\n\
+    \    rep (i, M) cin >> B[i], B[i]--;\n    rep (i, M) {\n        graph[A[i]].push_back(B[i]);\n\
+    \        graph[B[i]].push_back(A[i]);\n    }\n\n    BipartiteGraph<ll> bg(graph);\n\
+    \    if (bg.isBipartite) cout << \"Yes\" << endl;\n    else cout << \"No\" <<\
+    \ endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc327/tasks/abc327_d\"\n#include\
+    \ <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"graph/bipartite_graph.hpp\"\
+    \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
+    \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M; cin >> N >> M;\n    vector<ll>\
+    \ A(M), B(M);\n    Graph<ll> graph(N);\n    rep (i, M) cin >> A[i], A[i]--;\n\
+    \    rep (i, M) cin >> B[i], B[i]--;\n    rep (i, M) {\n        graph[A[i]].push_back(B[i]);\n\
+    \        graph[B[i]].push_back(A[i]);\n    }\n\n    BipartiteGraph<ll> bg(graph);\n\
+    \    if (bg.isBipartite) cout << \"Yes\" << endl;\n    else cout << \"No\" <<\
+    \ endl;\n\n    return 0;\n}\n"
   dependsOn:
   - graph/graph_template.hpp
   - graph/bipartite_graph.hpp
   isVerificationFile: true
   path: verify/graph/bipartite_graph_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-01 05:13:16+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-01 05:35:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/bipartite_graph_1.test.cpp
 layout: document
