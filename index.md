@@ -5,8 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: graph/bipartite_graph.hpp
-      title: "Bipartite Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
-        )"
+      title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"

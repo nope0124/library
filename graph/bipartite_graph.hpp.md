@@ -10,8 +10,7 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    document_title: "Bipartite Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\
-      \u30C8)"
+    document_title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
     links: []
   bundledCode: "#line 2 \"graph/bipartite_graph.hpp\"\n\n#include <vector>\n#include\
     \ <utility>\n#line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\
@@ -30,7 +29,25 @@ data:
     \        };\n\n        for (int i = 0; i < n; i++) if (!reached[i]) dfs(dfs, i,\
     \ -1);\n\n        assert((int)(preorder.size()) == n);\n        assert((int)(postorder.size())\
     \ == n);\n    }\n};\n#line 6 \"graph/bipartite_graph.hpp\"\n\n/**\n * @brief Bipartite\
-    \ Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)\n */\ntemplate<class\
+    \ Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)\n */\ntemplate<class T> struct BipartiteGraph\
+    \ {\n    int n, blackCnt, whiteCnt;\n    bool isBipartite = true;\n    std::vector<int>\
+    \ colors, black, white;\n\n    BipartiteGraph(Graph<T> &graph) : n((int)(graph.size())),\
+    \ colors(n, -1) {\n        bool ok = true;\n        auto dfs = [&](auto f, int\
+    \ v, int p, int color) -> void {\n            if (!ok) return;\n            colors[v]\
+    \ = color;\n            for (auto c: graph[v]) {\n                if (c == p)\
+    \ continue;\n                // \u3082\u3057\u4E8C\u90E8\u30B0\u30E9\u30D5\u304C\
+    \u4F5C\u6210\u3067\u304D\u306A\u3044\u5834\u5408\n                if (colors[c]\
+    \ != -1) ok = false;\n                f(f, c, v, 1 - color);\n            }\n\
+    \            return;\n        };\n        for (int i = 0; i < n; i++) {\n    \
+    \        if (colors[i] == -1) dfs(dfs, i, -1, 0);\n            if (!ok) {\n  \
+    \              colors = std::vector<int>(n, -1);\n                isBipartite\
+    \ = false;\n                return;\n            }\n        }\n        for (int\
+    \ i = 0; i < n; i++) {\n            if (colors[i] == 0) black.push_back(i);\n\
+    \            else if (colors[i] == 1) white.push_back(i);\n            else assert(false);\n\
+    \        }\n        blackCnt = (int)(black.size());\n        whiteCnt = (int)(white.size());\n\
+    \        return;\n    }\n};\n"
+  code: "#pragma once\n\n#include <vector>\n#include <utility>\n#include \"graph_template.hpp\"\
+    \n\n/**\n * @brief Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)\n */\ntemplate<class\
     \ T> struct BipartiteGraph {\n    int n, blackCnt, whiteCnt;\n    bool isBipartite\
     \ = true;\n    std::vector<int> colors, black, white;\n\n    BipartiteGraph(Graph<T>\
     \ &graph) : n((int)(graph.size())), colors(n, -1) {\n        bool ok = true;\n\
@@ -46,32 +63,13 @@ data:
     \      }\n        }\n        for (int i = 0; i < n; i++) {\n            if (colors[i]\
     \ == 0) black.push_back(i);\n            else if (colors[i] == 1) white.push_back(i);\n\
     \            else assert(false);\n        }\n        blackCnt = (int)(black.size());\n\
-    \        whiteCnt = (int)(white.size());\n        return;\n    }\n};\n"
-  code: "#pragma once\n\n#include <vector>\n#include <utility>\n#include \"graph_template.hpp\"\
-    \n\n/**\n * @brief Bipartite Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\
-    \u30FC\u30C8)\n */\ntemplate<class T> struct BipartiteGraph {\n    int n, blackCnt,\
-    \ whiteCnt;\n    bool isBipartite = true;\n    std::vector<int> colors, black,\
-    \ white;\n\n    BipartiteGraph(Graph<T> &graph) : n((int)(graph.size())), colors(n,\
-    \ -1) {\n        bool ok = true;\n        auto dfs = [&](auto f, int v, int p,\
-    \ int color) -> void {\n            if (!ok) return;\n            colors[v] =\
-    \ color;\n            for (auto c: graph[v]) {\n                if (c == p) continue;\n\
-    \                // \u3082\u3057\u4E8C\u90E8\u30B0\u30E9\u30D5\u304C\u4F5C\u6210\
-    \u3067\u304D\u306A\u3044\u5834\u5408\n                if (colors[c] != -1) ok\
-    \ = false;\n                f(f, c, v, 1 - color);\n            }\n          \
-    \  return;\n        };\n        for (int i = 0; i < n; i++) {\n            if\
-    \ (colors[i] == -1) dfs(dfs, i, -1, 0);\n            if (!ok) {\n            \
-    \    colors = std::vector<int>(n, -1);\n                isBipartite = false;\n\
-    \                return;\n            }\n        }\n        for (int i = 0; i\
-    \ < n; i++) {\n            if (colors[i] == 0) black.push_back(i);\n         \
-    \   else if (colors[i] == 1) white.push_back(i);\n            else assert(false);\n\
-    \        }\n        blackCnt = (int)(black.size());\n        whiteCnt = (int)(white.size());\n\
-    \        return;\n    }\n};"
+    \        whiteCnt = (int)(white.size());\n        return;\n    }\n};"
   dependsOn:
   - graph/graph_template.hpp
   isVerificationFile: false
   path: graph/bipartite_graph.hpp
   requiredBy: []
-  timestamp: '2024-09-01 01:51:10+09:00'
+  timestamp: '2024-09-01 02:10:26+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/bipartite_graph.hpp
@@ -79,5 +77,5 @@ layout: document
 redirect_from:
 - /library/graph/bipartite_graph.hpp
 - /library/graph/bipartite_graph.hpp.html
-title: "Bipartite Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)"
+title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
 ---
