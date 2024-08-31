@@ -5,27 +5,28 @@ data:
     pages:
     - icon: ':warning:'
       path: graph/bipartite_graph.hpp
-      title: graph/bipartite_graph.hpp
+      title: "Bipartite Graph (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+        )"
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
-      title: graph/dijkstra.hpp
+      title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
     - icon: ':heavy_check_mark:'
       path: graph/graph_template.hpp
-      title: "\u884C\u304D\u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\
-        \u914D\u5217\u3092\u4F5C\u308B"
+      title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
       path: graph/lowest_common_ancestor.hpp
-      title: "\u4E8C\u9802\u70B9\u306E\u6700\u5C0F\u5171\u901A\u7956\u5148\u3092\u8ABF\
-        \u3079\u308B"
+      title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     - icon: ':warning:'
       path: graph/strongly_connected_component.hpp
-      title: graph/strongly_connected_component.hpp
+      title: "Strongly Connected Component (\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+        )"
     - icon: ':warning:'
       path: graph/topological_sort.hpp
-      title: graph/topological_sort.hpp
+      title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+        )"
     - icon: ':warning:'
       path: graph/tree_diameter.hpp
-      title: graph/tree_diameter.hpp
+      title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   verificationCategories:
   - name: verify/graph
     pages:

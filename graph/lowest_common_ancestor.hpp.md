@@ -3,20 +3,19 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/graph_template.hpp
-    title: "\u884C\u304D\u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\
-      \u914D\u5217\u3092\u4F5C\u308B"
+    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    document_title: "\u4E8C\u9802\u70B9\u306E\u6700\u5C0F\u5171\u901A\u7956\u5148\u3092\
-      \u8ABF\u3079\u308B"
+    document_title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     links: []
   bundledCode: "#line 2 \"graph/lowest_common_ancestor.hpp\"\n\n#include <vector>\n\
     #line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\
-    \ntemplate<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
+    \n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
+    template<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
     \ graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>()) {}\n    inline\
     \ std::vector<T>& operator[] (int i) { return graph[i]; }\n    size_t size() const\
     \ { return graph.size(); }\n\n    std::vector<int> preorder, postorder;\n\n  \
@@ -29,7 +28,8 @@ data:
     \ c, v);\n            }\n            postorder.push_back(v);\n            return;\n\
     \        };\n\n        for (int i = 0; i < n; i++) if (!reached[i]) dfs(dfs, i,\
     \ -1);\n\n        assert((int)(preorder.size()) == n);\n        assert((int)(postorder.size())\
-    \ == n);\n    }\n};\n#line 5 \"graph/lowest_common_ancestor.hpp\"\n\ntemplate<class\
+    \ == n);\n    }\n};\n#line 5 \"graph/lowest_common_ancestor.hpp\"\n\n/**\n * @brief\
+    \ Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)\n */\ntemplate<class\
     \ T> struct LowestCommonAncestor {\n    int n;\n    const int MAX_DOUBLING = 40;\n\
     \    std::vector<int> depth;\n    std::vector<std::vector<int>> parents;\n   \
     \ \n    LowestCommonAncestor(Graph<T> &graph, const int root = 0) : n((int)(graph.size())),\
@@ -62,10 +62,11 @@ data:
     \u70B92\n     * @return \u6700\u77ED\u8DDD\u96E2\n     */\n    int dist(int u,\
     \ int v) {\n        return depth[u] + depth[v] - 2 * depth[lca(u, v)];\n    }\n\
     };\n"
-  code: "#pragma once\n\n#include <vector>\n#include \"graph_template.hpp\"\n\ntemplate<class\
-    \ T> struct LowestCommonAncestor {\n    int n;\n    const int MAX_DOUBLING = 40;\n\
-    \    std::vector<int> depth;\n    std::vector<std::vector<int>> parents;\n   \
-    \ \n    LowestCommonAncestor(Graph<T> &graph, const int root = 0) : n((int)(graph.size())),\
+  code: "#pragma once\n\n#include <vector>\n#include \"graph_template.hpp\"\n\n/**\n\
+    \ * @brief Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)\n */\n\
+    template<class T> struct LowestCommonAncestor {\n    int n;\n    const int MAX_DOUBLING\
+    \ = 40;\n    std::vector<int> depth;\n    std::vector<std::vector<int>> parents;\n\
+    \    \n    LowestCommonAncestor(Graph<T> &graph, const int root = 0) : n((int)(graph.size())),\
     \ depth(n, 0), parents(MAX_DOUBLING, std::vector<int>(n)) {\n        auto dfs\
     \ = [&](auto f, int v, int p, int d) -> void {\n            parents[0][v] = p;\
     \ // 2^0\u9061\u308B\u3068p\u306B\u5230\u9054\n            depth[v] = d; // \u30EB\
@@ -100,7 +101,7 @@ data:
   isVerificationFile: false
   path: graph/lowest_common_ancestor.hpp
   requiredBy: []
-  timestamp: '2024-08-30 23:10:09+09:00'
+  timestamp: '2024-09-01 01:51:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/lowest_common_ancestor.hpp
@@ -108,6 +109,5 @@ layout: document
 redirect_from:
 - /library/graph/lowest_common_ancestor.hpp
 - /library/graph/lowest_common_ancestor.hpp.html
-title: "\u4E8C\u9802\u70B9\u306E\u6700\u5C0F\u5171\u901A\u7956\u5148\u3092\u8ABF\u3079\
-  \u308B"
+title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
 ---
