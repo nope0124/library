@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph/bipartite_graph.hpp
     title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
   - icon: ':heavy_check_mark:'
@@ -23,6 +23,9 @@ data:
     path: graph/tree_diameter.hpp
     title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/graph/bipartite_graph_1.test.cpp
+    title: verify/graph/bipartite_graph_1.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/dijkstra_1.test.cpp
     title: verify/graph/dijkstra_1.test.cpp
@@ -41,9 +44,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter_1.test.cpp
     title: verify/graph/tree_diameter_1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     links: []
@@ -92,9 +95,10 @@ data:
   - graph/lowest_common_ancestor.hpp
   - graph/bipartite_graph.hpp
   timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/graph/tree_diameter_1.test.cpp
+  - verify/graph/bipartite_graph_1.test.cpp
   - verify/graph/strongly_connected_component_1.test.cpp
   - verify/graph/dijkstra_1.test.cpp
   - verify/graph/topological_sort_1.test.cpp
