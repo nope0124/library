@@ -5,7 +5,7 @@
 #include "graph_template.hpp"
 
 /**
- * @brief Bipartite Graph (トポロジカルソート)
+ * @brief Bipartite Graph (二部グラフ)
  */
 template<class T> struct BipartiteGraph {
     int n, blackCnt, whiteCnt;
