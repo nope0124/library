@@ -8,10 +8,13 @@ data:
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/tree_diameter_1.test.cpp
+    title: verify/graph/tree_diameter_1.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
     links: []
@@ -79,8 +82,9 @@ data:
   path: graph/tree_diameter.hpp
   requiredBy: []
   timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/graph/tree_diameter_1.test.cpp
 documentation_of: graph/tree_diameter.hpp
 layout: document
 redirect_from:

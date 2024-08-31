@@ -2,28 +2,28 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph/dijkstra.hpp
+    title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
+  - icon: ':heavy_check_mark:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: graph/tree_diameter.hpp
     title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/dijkstra_1.test.cpp
-    title: verify/graph/dijkstra_1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/graph/tree_diameter_1.test.cpp
-    title: verify/graph/tree_diameter_1.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
-    links: []
-  bundledCode: "#line 2 \"graph/dijkstra.hpp\"\n\n#include <vector>\n#include <queue>\n\
-    #line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\
-    \n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+  bundledCode: "#line 1 \"verify/graph/tree_diameter_1.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\n#include\
+    \ <bits/stdc++.h>\n#line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\
+    \n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
     template<class T> struct Edge {\n    int to;\n    T cost;\n\n    Edge(int to,\
     \ T cost) : to(to), cost(cost) {}\n};\n\ntemplate<class T> struct Graph {\n  \
     \  int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int n) : n(n),\
@@ -38,36 +38,8 @@ data:
     \       if (c == p) continue;\n                f(f, c, v);\n            }\n  \
     \          postorder.push_back(v);\n            return;\n        };\n\n      \
     \  for (int i = 0; i < n; i++) if (!reached[i]) dfs(dfs, i, -1);\n\n        assert((int)(preorder.size())\
-    \ == n);\n        assert((int)(postorder.size()) == n);\n    }\n};\n#line 6 \"\
-    graph/dijkstra.hpp\"\n\n/**\n * @brief Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\
-    \u30E9\u6CD5)\n */\ntemplate<class T> struct Dijkstra {\n    int n, inf;\n   \
-    \ std::vector<T> dist;\n    std::vector<int> parents;\n    Graph<Edge<T>> graph;\n\
-    \n    Dijkstra(Graph<Edge<T>> &graph, int start = 0, T inf = 1e16) : n((int)(graph.size())),\
-    \ inf(inf), dist(n, inf), parents(n, -1), graph(graph) {\n        std::priority_queue<std::pair<T,\
-    \ int>, std::vector<std::pair<T, int>>, std::greater<std::pair<T, int>>> que;\n\
-    \        dist[start] = 0;\n\n        que.push(std::pair<T, int>(T(0), start));\
-    \ // pair(\u8DDD\u96E2, \u5230\u7740\u70B9)\n        while (!que.empty()) {\n\
-    \            auto p = que.top(); que.pop();\n            T d = p.first;\n    \
-    \        int v = p.second;\n            if (dist[v] < d) continue;\n         \
-    \   for (auto e: graph[v]) {\n                if (dist[e.to] > dist[v] + e.cost)\
-    \ {\n                    dist[e.to] = dist[v] + e.cost;\n                    parents[e.to]\
-    \ = v;\n                    que.push(std::pair<T, int>(dist[e.to], e.to));\n \
-    \               }\n            }\n        }\n    }\n\n    void init(int start)\
-    \ {\n        std::priority_queue<std::pair<T, int>, std::vector<std::pair<T, int>>,\
-    \ std::greater<std::pair<T, int>>> que;\n        dist.assign(n, inf);\n      \
-    \  parents.assign(n, -1);\n        dist[start] = 0;\n\n        que.push(std::pair<T,\
-    \ int>(T(0), start)); // pair(\u8DDD\u96E2, \u5230\u7740\u70B9)\n        while\
-    \ (!que.empty()) {\n            auto p = que.top(); que.pop();\n            T\
-    \ d = p.first;\n            int v = p.second;\n            if (dist[v] < d) continue;\n\
-    \            for (auto e: graph[v]) {\n                if (dist[e.to] > dist[v]\
-    \ + e.cost) {\n                    dist[e.to] = dist[v] + e.cost;\n          \
-    \          parents[e.to] = v;\n                    que.push(std::pair<T, int>(dist[e.to],\
-    \ e.to));\n                }\n            }\n        }\n    }\n\n    std::vector<int>\
-    \ getPath(int end) {\n        std::vector<int> path;\n        for (int cur = end;\
-    \ cur != -1; cur = parents[cur]) {\n            path.push_back(cur);\n       \
-    \ }\n        reverse(path.begin(), path.end());\n        return path;\n    }\n\
-    };\n"
-  code: "#pragma once\n\n#include <vector>\n#include <queue>\n#include \"graph_template.hpp\"\
+    \ == n);\n        assert((int)(postorder.size()) == n);\n    }\n};\n#line 2 \"\
+    graph/tree_diameter.hpp\"\n\n#line 2 \"graph/dijkstra.hpp\"\n\n#line 6 \"graph/dijkstra.hpp\"\
     \n\n/**\n * @brief Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)\n */\n\
     template<class T> struct Dijkstra {\n    int n, inf;\n    std::vector<T> dist;\n\
     \    std::vector<int> parents;\n    Graph<Edge<T>> graph;\n\n    Dijkstra(Graph<Edge<T>>\
@@ -95,22 +67,37 @@ data:
     \ getPath(int end) {\n        std::vector<int> path;\n        for (int cur = end;\
     \ cur != -1; cur = parents[cur]) {\n            path.push_back(cur);\n       \
     \ }\n        reverse(path.begin(), path.end());\n        return path;\n    }\n\
-    };"
+    };\n#line 6 \"graph/tree_diameter.hpp\"\n\n/**\n * @brief Tree Diameter (\u6728\
+    \u306E\u76F4\u5F84)\n */\ntemplate<class T> int tree_diameter(Graph<Edge<T>> &graph)\
+    \ {\n    Dijkstra<T> ds(graph);\n    int idx = max_element(ds.dist.begin(), ds.dist.end())\
+    \ - ds.dist.begin();\n    ds.init(idx);\n    return *max_element(ds.dist.begin(),\
+    \ ds.dist.end());\n}\n#line 5 \"verify/graph/tree_diameter_1.test.cpp\"\nusing\
+    \ namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i = 0; i\
+    \ < (ll)N; i++)\n\nint main() {\n    ll N; cin >> N;\n    Graph<Edge<ll>> graph(N);\n\
+    \    rep (i, N - 1) {\n        ll a, b, c; cin >> a >> b >> c;\n        graph[a].push_back(Edge<ll>(b,\
+    \ c));\n        graph[b].push_back(Edge<ll>(a, c));\n    }\n    cout << tree_diameter(graph)\
+    \ << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
+    \n#include <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"\
+    graph/tree_diameter.hpp\"\nusing namespace std;\ntypedef long long int ll;\n#define\
+    \ rep(i, N) for(ll i = 0; i < (ll)N; i++)\n\nint main() {\n    ll N; cin >> N;\n\
+    \    Graph<Edge<ll>> graph(N);\n    rep (i, N - 1) {\n        ll a, b, c; cin\
+    \ >> a >> b >> c;\n        graph[a].push_back(Edge<ll>(b, c));\n        graph[b].push_back(Edge<ll>(a,\
+    \ c));\n    }\n    cout << tree_diameter(graph) << endl;\n\n    return 0;\n}\n"
   dependsOn:
   - graph/graph_template.hpp
-  isVerificationFile: false
-  path: graph/dijkstra.hpp
-  requiredBy:
   - graph/tree_diameter.hpp
-  timestamp: '2024-09-01 02:25:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/graph/tree_diameter_1.test.cpp
-  - verify/graph/dijkstra_1.test.cpp
-documentation_of: graph/dijkstra.hpp
+  - graph/dijkstra.hpp
+  isVerificationFile: true
+  path: verify/graph/tree_diameter_1.test.cpp
+  requiredBy: []
+  timestamp: '2024-09-01 02:28:12+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: verify/graph/tree_diameter_1.test.cpp
 layout: document
 redirect_from:
-- /library/graph/dijkstra.hpp
-- /library/graph/dijkstra.hpp.html
-title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
+- /verify/verify/graph/tree_diameter_1.test.cpp
+- /verify/verify/graph/tree_diameter_1.test.cpp.html
+title: verify/graph/tree_diameter_1.test.cpp
 ---

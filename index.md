@@ -23,7 +23,7 @@ data:
       path: graph/topological_sort.hpp
       title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
         )"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree_diameter.hpp
       title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   verificationCategories:
@@ -32,5 +32,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/dijkstra_1.test.cpp
       title: verify/graph/dijkstra_1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/tree_diameter_1.test.cpp
+      title: verify/graph/tree_diameter_1.test.cpp
 layout: toppage
 ---
