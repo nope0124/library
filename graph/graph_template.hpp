@@ -5,6 +5,13 @@
 /**
  * @brief グラフテンプレート
  */
+template<class T> struct Edge {
+    int to;
+    T cost;
+
+    Edge(int to, T cost) : to(to), cost(cost) {}
+};
+
 template<class T> struct Graph {
     int n;
     std::vector<std::vector<T>> graph;

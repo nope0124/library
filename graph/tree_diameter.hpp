@@ -1,38 +1,15 @@
 #pragma once
 
 #include <vector>
-#include <queue>
 #include "graph_template.hpp"
+#include "dijkstra.hpp"
 
 /**
  * @brief Tree Diameter (木の直径)
  */
-template<class T> int tree_diameter(Graph<T> &graph) {
-    int n = (int)(graph.size());
-    std::vector<int> dist(n, -1);
-
-    std::queue<int> que;
-    dist[0] = 0;
-    que.push(0);
-    while (!que.empty()) {
-        auto v = que.front(); que.pop();
-        for (auto c: graph[v]) {
-            if (dist[c] != -1) continue;
-            dist[c] = dist[v] + 1;
-            que.push(c);
-        }
-    }
-    int idx = max_element(dist.begin(), dist.end()) - dist.begin();
-    dist.assign(n, -1);
-    dist[idx] = 0;
-    que.push(idx);
-    while (!que.empty()) {
-        auto v = que.front(); que.pop();
-        for (auto c: graph[v]) {
-            if (dist[c] != -1) continue;
-            dist[c] = dist[v] + 1;
-            que.push(c);
-        }
-    }
-    return *max_element(dist.begin(), dist.end());
+template<class T> int tree_diameter(Graph<Edge<T>> &graph) {
+    Dijkstra<T> ds(graph);
+    int idx = max_element(ds.dist.begin(), ds.dist.end()) - ds.dist.begin();
+    ds.init(idx);
+    return *max_element(ds.dist.begin(), ds.dist.end());
 }

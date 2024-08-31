@@ -7,13 +7,6 @@
 /**
  * @brief Dijkstra (ダイクストラ法)
  */
-template<class T> struct Edge {
-    int to;
-    T cost;
-
-    Edge(int to, T cost) : to(to), cost(cost) {}
-};
-
 template<class T> struct Dijkstra {
     int n, inf;
     std::vector<T> dist;
