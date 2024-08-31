@@ -4,6 +4,9 @@
 #include <utility>
 #include "graph_template.hpp"
 
+/**
+ * @brief Strongly Connected Component (強連結成分分解)
+ */
 template<class T> struct StronglyConnectedComponent {
     int n, sz;
     std::vector<int> idxs;

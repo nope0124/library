@@ -4,6 +4,9 @@
 #include <utility>
 #include "graph_template.hpp"
 
+/**
+ * @brief Bipartite Graph (トポロジカルソート)
+ */
 template<class T> struct BipartiteGraph {
     int n, blackCnt, whiteCnt;
     bool isBipartite = true;

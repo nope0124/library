@@ -4,6 +4,9 @@
 #include <queue>
 #include "graph_template.hpp"
 
+/**
+ * @brief Tree Diameter (木の直径)
+ */
 template<class T> int tree_diameter(Graph<T> &graph) {
     int n = (int)(graph.size());
     std::vector<int> dist(n, -1);

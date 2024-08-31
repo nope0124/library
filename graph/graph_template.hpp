@@ -2,6 +2,9 @@
 
 #include <vector>
 
+/**
+ * @brief グラフテンプレート
+ */
 template<class T> struct Graph {
     int n;
     std::vector<std::vector<T>> graph;

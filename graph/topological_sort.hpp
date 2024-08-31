@@ -4,6 +4,9 @@
 #include <queue>
 #include "graph_template.hpp"
 
+/**
+ * @brief Topological Sort (トポロジカルソート)
+ */
 template<class T> std::vector<int> topological_sort(Graph<T> &graph) {
     int n = (int)(graph.size());
     std::vector<int> res, indeg(n, 0);

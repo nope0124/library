@@ -4,6 +4,9 @@
 #include <queue>
 #include "graph_template.hpp"
 
+/**
+ * @brief Dijkstra (ダイクストラ法)
+ */
 template<class T> struct Edge {
     int to;
     T cost;

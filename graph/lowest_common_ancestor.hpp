@@ -3,6 +3,9 @@
 #include <vector>
 #include "graph_template.hpp"
 
+/**
+ * @brief Lowest Common Ancestor (最小共通祖先)
+ */
 template<class T> struct LowestCommonAncestor {
     int n;
     const int MAX_DOUBLING = 40;
