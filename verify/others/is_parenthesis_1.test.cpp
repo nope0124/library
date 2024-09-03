@@ -1,6 +1,6 @@
 #define PROBLEM "https://atcoder.jp/contests/typical90/tasks/typical90_b"
 #include <bits/stdc++.h>
-#include "is_parenthesis.hpp"
+#include "others/is_parenthesis.hpp"
 using namespace std;
 typedef long long int ll;
 #define rep(i, N) for(ll i = 0; i < (ll)N; i++)
