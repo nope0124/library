@@ -2,6 +2,9 @@
 
 #include "data_structure/fenwick_tree.hpp"
 
+/**
+ * @brief 転倒数 (Inversion Number)
+ */
 template<class T> long long inversion_number(std::vector<T>& V) {
     std::vector<T> W = V;
     sort(W.begin(), W.end());
