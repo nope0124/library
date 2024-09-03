@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data_structure/fenwick_tree.hpp
-      title: data_structure/fenwick_tree.hpp
+      title: Fenwick Tree (Binary Indexed Tree)
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'

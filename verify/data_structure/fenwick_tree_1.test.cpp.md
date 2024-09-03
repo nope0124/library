@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/fenwick_tree.hpp
-    title: data_structure/fenwick_tree.hpp
+    title: Fenwick Tree (Binary Indexed Tree)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,9 +17,10 @@ data:
   bundledCode: "#line 1 \"verify/data_structure/fenwick_tree_1.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n#include <bits/stdc++.h>\n#line 2 \"data_structure/fenwick_tree.hpp\"\n\n#line\
-    \ 4 \"data_structure/fenwick_tree.hpp\"\n\ntemplate<class T> struct FenwickTree\
-    \ {\n    private:\n    int n;\n    std::vector<int> bit;\n\n    public:\n    FenwickTree(int\
-    \ n) : n(n), bit(n + 1, T(0)) {}\n    FenwickTree(std::vector<T>& V) : n((int)(V.size())),\
+    \ 4 \"data_structure/fenwick_tree.hpp\"\n\n/**\n * @brief Fenwick Tree (Binary\
+    \ Indexed Tree)\n */\ntemplate<class T> struct FenwickTree {\n    private:\n \
+    \   int n;\n    std::vector<int> bit;\n\n    public:\n    FenwickTree(int n) :\
+    \ n(n), bit(n + 1, T(0)) {}\n    FenwickTree(std::vector<T>& V) : n((int)(V.size())),\
     \ bit(n + 1, T(0)) {\n        for (int i = 0; i < n; i++) add(i, V[i]);\n    }\n\
     \n    // 0-indexed\u3067\u5024\u3092\u8FFD\u52A0\n    // V[idx] += x\n    void\
     \ add(int idx, T x) {\n        assert(0 <= idx && idx < n);\n        idx++; //\
@@ -60,7 +61,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/fenwick_tree_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 05:45:30+09:00'
+  timestamp: '2024-09-04 05:50:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/fenwick_tree_1.test.cpp
