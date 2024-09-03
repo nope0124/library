@@ -19,12 +19,13 @@ data:
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: is_parenthesis.hpp:\
     \ line -1: no such header\n"
-  code: "#include <bits/stdc++.h>\n#include \"is_parenthesis.hpp\"\nusing namespace\
-    \ std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i = 0; i < (ll)N;\
-    \ i++)\n#define ALL(V)  (V).begin(), (V).end()\n\nint main() {\n    ll N; cin\
-    \ >> N;\n    vector<string> ans;\n    rep (bit, (1LL<<N)) {\n        string parenthesis\
-    \ = \"\";\n        rep (i, N) {\n            if (bit >> i & 1) parenthesis +=\
-    \ '(';\n            else parenthesis += ')';\n        }\n        if (!is_parenthesis(parenthesis))\
+  code: "#define PROBLEM \"https://atcoder.jp/contests/typical90/tasks/typical90_b\"\
+    \n#include <bits/stdc++.h>\n#include \"is_parenthesis.hpp\"\nusing namespace std;\n\
+    typedef long long int ll;\n#define rep(i, N) for(ll i = 0; i < (ll)N; i++)\n#define\
+    \ ALL(V)  (V).begin(), (V).end()\n\nint main() {\n    ll N; cin >> N;\n    vector<string>\
+    \ ans;\n    rep (bit, (1LL<<N)) {\n        string parenthesis = \"\";\n      \
+    \  rep (i, N) {\n            if (bit >> i & 1) parenthesis += '(';\n         \
+    \   else parenthesis += ')';\n        }\n        if (!is_parenthesis(parenthesis))\
     \ continue;\n        ans.push_back(parenthesis);\n    }\n    sort(ALL(ans));\n\
     \    rep (i, ans.size()) cout << ans[i] << \"\\n\";\n\n    return 0;\n}"
   dependsOn: []
