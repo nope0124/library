@@ -3,7 +3,7 @@
 #include "data_structure/fenwick_tree.hpp"
 
 /**
- * @brief 転倒数 (Inversion Number)
+ * @brief Inversion Number (転倒数)
  */
 template<class T> long long inversion_number(std::vector<T>& V) {
     std::vector<T> W = V;
