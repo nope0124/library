@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: data_structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: data_structure/fenwick_tree.hpp
+      title: data_structure/fenwick_tree.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -35,6 +40,11 @@ data:
       path: others/run_length_encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (Run Length Encoding)"
   verificationCategories:
+  - name: verify/data_structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/fenwick_tree_1.test.cpp
+      title: verify/data_structure/fenwick_tree_1.test.cpp
   - name: verify/graph
     pages:
     - icon: ':heavy_check_mark:'
