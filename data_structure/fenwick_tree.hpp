@@ -2,6 +2,9 @@
 
 #include <vector>
 
+/**
+ * @brief Fenwick Tree (Binary Indexed Tree)
+ */
 template<class T> struct FenwickTree {
     private:
     int n;
