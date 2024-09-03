@@ -6,7 +6,7 @@ data:
     title: Fenwick Tree (Binary Indexed Tree)
   - icon: ':heavy_check_mark:'
     path: data_structure/inversion_number.hpp
-    title: "\u8EE2\u5012\u6570 (Inversion Number)"
+    title: "Inversion Number (\u8EE2\u5012\u6570)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -42,7 +42,7 @@ data:
     \       add(idx, x - get(idx));\n    }\n\n    std::vector<T> getVector() {\n \
     \       std::vector<T> V(n);\n        for (int i = 0; i < n; i++) V[i] = get(i);\n\
     \        return V;\n    }\n};\n#line 4 \"data_structure/inversion_number.hpp\"\
-    \n\n/**\n * @brief \u8EE2\u5012\u6570 (Inversion Number)\n */\ntemplate<class\
+    \n\n/**\n * @brief Inversion Number (\u8EE2\u5012\u6570)\n */\ntemplate<class\
     \ T> long long inversion_number(std::vector<T>& V) {\n    std::vector<T> W = V;\n\
     \    sort(W.begin(), W.end());\n    W.erase(unique(W.begin(), W.end()), W.end());\n\
     \    int n = (int)(W.size());\n    FenwickTree<int> bit(n);\n    long long res\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/data_structure/inversion_number_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 06:36:46+09:00'
+  timestamp: '2024-09-04 06:39:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/inversion_number_1.test.cpp

@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: data_structure/inversion_number.hpp
-    title: "\u8EE2\u5012\u6570 (Inversion Number)"
+    title: "Inversion Number (\u8EE2\u5012\u6570)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/fenwick_tree_1.test.cpp

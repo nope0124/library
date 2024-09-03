@@ -8,7 +8,7 @@ data:
       title: Fenwick Tree (Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
       path: data_structure/inversion_number.hpp
-      title: "\u8EE2\u5012\u6570 (Inversion Number)"
+      title: "Inversion Number (\u8EE2\u5012\u6570)"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -41,7 +41,8 @@ data:
       title: "\u62EC\u5F27\u5217\u5224\u5B9A"
     - icon: ':heavy_check_mark:'
       path: others/run_length_encoding.hpp
-      title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (Run Length Encoding)"
+      title: "Run Length Encoding (\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E\
+        )"
   verificationCategories:
   - name: verify/data_structure
     pages:

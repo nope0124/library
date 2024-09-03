@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: others/run_length_encoding.hpp
-    title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (Run Length Encoding)"
+    title: "Run Length Encoding (\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,8 +17,8 @@ data:
   bundledCode: "#line 1 \"verify/others/run_length_encoding_1.test.cpp\"\n#define\
     \ PROBLEM \"https://atcoder.jp/contests/abc329/tasks/abc329_c\"\n#include <bits/stdc++.h>\n\
     #line 2 \"others/run_length_encoding.hpp\"\n\n#line 6 \"others/run_length_encoding.hpp\"\
-    \n\n/**\n * @brief \u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (Run Length\
-    \ Encoding)\n */\ntemplate<class T> std::vector<std::pair<T, int>> run_length_encoding(std::vector<T>&\
+    \n\n/**\n * @brief Run Length Encoding (\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\
+    \u7E2E)\n */\ntemplate<class T> std::vector<std::pair<T, int>> run_length_encoding(std::vector<T>&\
     \ V) {\n    assert((int)(V.size()) > 0);\n    std::vector<std::pair<T, int>> res\
     \ = {std::pair<T, int>(V.front(), 0)};\n    for (auto c: V) {\n        if (c !=\
     \ res.back().first) {\n            res.push_back(std::pair<T, int>(c, 0));\n \
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/others/run_length_encoding_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 05:39:24+09:00'
+  timestamp: '2024-09-04 06:40:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/others/run_length_encoding_1.test.cpp
