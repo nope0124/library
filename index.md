@@ -26,6 +26,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree_diameter.hpp
       title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
+  - name: others
+    pages:
+    - icon: ':warning:'
+      path: others/is_parenthesis.hpp
+      title: "\u62EC\u5F27\u5217\u5224\u5B9A"
   verificationCategories:
   - name: verify/graph
     pages:
@@ -50,5 +55,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter_1.test.cpp
       title: verify/graph/tree_diameter_1.test.cpp
+  - name: verify/others
+    pages:
+    - icon: ':x:'
+      path: verify/others/is_parenthesis_1.test.cpp
+      title: verify/others/is_parenthesis_1.test.cpp
 layout: toppage
 ---
