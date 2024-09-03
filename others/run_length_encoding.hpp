@@ -5,7 +5,7 @@
 #include <vector>
 
 /**
- * @brief ランレングス圧縮 (Run Length Encoding)
+ * @brief Run Length Encoding (ランレングス圧縮)
  */
 template<class T> std::vector<std::pair<T, int>> run_length_encoding(std::vector<T>& V) {
     assert((int)(V.size()) > 0);
