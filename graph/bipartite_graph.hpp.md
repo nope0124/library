@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/graph/bipartite_graph_1.test.cpp
     title: verify/graph/bipartite_graph_1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
     links: []
@@ -76,7 +76,7 @@ data:
   path: graph/bipartite_graph.hpp
   requiredBy: []
   timestamp: '2024-09-01 05:13:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/graph/bipartite_graph_1.test.cpp
 documentation_of: graph/bipartite_graph.hpp
