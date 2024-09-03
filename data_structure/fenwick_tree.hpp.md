@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: data_structure/inversion_number.hpp
+    title: data_structure/inversion_number.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/data_structure/fenwick_tree_1.test.cpp
     title: verify/data_structure/fenwick_tree_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/data_structure/inversion_number_1.test.cpp
+    title: verify/data_structure/inversion_number_1.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,11 +64,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data_structure/fenwick_tree.hpp
-  requiredBy: []
+  requiredBy:
+  - data_structure/inversion_number.hpp
   timestamp: '2024-09-04 05:50:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/fenwick_tree_1.test.cpp
+  - verify/data_structure/inversion_number_1.test.cpp
 documentation_of: data_structure/fenwick_tree.hpp
 layout: document
 redirect_from:

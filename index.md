@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/fenwick_tree.hpp
       title: Fenwick Tree (Binary Indexed Tree)
+    - icon: ':heavy_check_mark:'
+      path: data_structure/inversion_number.hpp
+      title: data_structure/inversion_number.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -45,6 +48,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/fenwick_tree_1.test.cpp
       title: verify/data_structure/fenwick_tree_1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/data_structure/inversion_number_1.test.cpp
+      title: verify/data_structure/inversion_number_1.test.cpp
   - name: verify/graph
     pages:
     - icon: ':heavy_check_mark:'
