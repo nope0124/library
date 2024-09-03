@@ -67,8 +67,8 @@ data:
   timestamp: '2024-09-01 04:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/topological_sort_1.test.cpp
   - verify/graph/topological_sort_2.test.cpp
+  - verify/graph/topological_sort_1.test.cpp
 documentation_of: graph/topological_sort.hpp
 layout: document
 redirect_from:
