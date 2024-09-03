@@ -8,7 +8,7 @@ data:
       title: Fenwick Tree (Binary Indexed Tree)
     - icon: ':heavy_check_mark:'
       path: data_structure/inversion_number.hpp
-      title: data_structure/inversion_number.hpp
+      title: "\u8EE2\u5012\u6570 (Inversion Number)"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
