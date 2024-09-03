@@ -28,7 +28,7 @@ data:
       title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   - name: others
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: others/is_parenthesis.hpp
       title: "\u62EC\u5F27\u5217\u5224\u5B9A"
   verificationCategories:
