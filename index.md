@@ -31,6 +31,9 @@ data:
     - icon: ':warning:'
       path: others/is_parenthesis.hpp
       title: "\u62EC\u5F27\u5217\u5224\u5B9A"
+    - icon: ':heavy_check_mark:'
+      path: others/run_length_encoding.hpp
+      title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (Run Length Encoding)"
   verificationCategories:
   - name: verify/graph
     pages:
@@ -55,5 +58,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter_1.test.cpp
       title: verify/graph/tree_diameter_1.test.cpp
+  - name: verify/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/others/run_length_encoding_1.test.cpp
+      title: verify/others/run_length_encoding_1.test.cpp
 layout: toppage
 ---
