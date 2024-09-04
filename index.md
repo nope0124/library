@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/inversion_number.hpp
       title: "Inversion Number (\u8EE2\u5012\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/prefix_sum_2d.hpp
       title: "Prefix Sum 2D (\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C)"
     - icon: ':heavy_check_mark:'
@@ -58,7 +58,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/data_structure/inversion_number_1.test.cpp
       title: verify/data_structure/inversion_number_1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/data_structure/prefix_sum_2d_1.test.cpp
       title: verify/data_structure/prefix_sum_2d_1.test.cpp
     - icon: ':heavy_check_mark:'

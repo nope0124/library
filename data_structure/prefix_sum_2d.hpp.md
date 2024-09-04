@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/data_structure/prefix_sum_2d_1.test.cpp
     title: verify/data_structure/prefix_sum_2d_1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Prefix Sum 2D (\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C)"
     links: []
@@ -52,7 +52,7 @@ data:
   path: data_structure/prefix_sum_2d.hpp
   requiredBy: []
   timestamp: '2024-09-04 23:43:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/data_structure/prefix_sum_2d_1.test.cpp
 documentation_of: data_structure/prefix_sum_2d.hpp

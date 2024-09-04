@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/prefix_sum_2d.hpp
     title: "Prefix Sum 2D (\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B
   bundledCode: "#line 1 \"verify/data_structure/prefix_sum_2d_1.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
+    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\
     \n#include <bits/stdc++.h>\n#line 2 \"data_structure/prefix_sum_2d.hpp\"\n\n#line\
     \ 4 \"data_structure/prefix_sum_2d.hpp\"\n\n/**\n * @brief Prefix Sum 2D (\u4E8C\
     \u6B21\u5143\u7D2F\u7A4D\u548C)\n */\ntemplate<class T> struct PrefixSum2D {\n\
@@ -42,7 +42,7 @@ data:
     \    ll ans = 0;\n    rep (i, ps.h) {\n        rep (j, ps.w) {\n            ans\
     \ = max(ans, ps.get(j, i));\n        }\n    }\n    cout << ans << endl;\n\n  \
     \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A\"\
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\
     \n#include <bits/stdc++.h>\n#include \"data_structure/prefix_sum_2d.hpp\"\nusing\
     \ namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i = 0; i\
     \ < (ll)N; i++)\n\nint main() {\n    ll N; cin >> N;\n    vector<vector<ll>> V(1010,\
@@ -56,8 +56,8 @@ data:
   isVerificationFile: true
   path: verify/data_structure/prefix_sum_2d_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 23:43:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-04 23:46:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/prefix_sum_2d_1.test.cpp
 layout: document
