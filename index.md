@@ -11,7 +11,7 @@ data:
       title: "Inversion Number (\u8EE2\u5012\u6570)"
     - icon: ':heavy_check_mark:'
       path: data_structure/unionfind.hpp
-      title: "parents\u3092\u521D\u671F\u5316\u3059\u308B"
+      title: "Union-Find\u6728"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
