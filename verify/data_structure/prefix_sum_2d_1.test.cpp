@@ -17,8 +17,8 @@ int main() {
     }
     PrefixSum2D<ll> ps(V);
     ll ans = 0;
-    rep (i, ps.h) {
-        rep (j, ps.w) {
+    rep (i, ps.h + 1) {
+        rep (j, ps.w + 1) {
             ans = max(ans, ps.get(j, i));
         }
     }

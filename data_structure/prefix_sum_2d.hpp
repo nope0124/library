@@ -28,20 +28,18 @@ template<class T> struct PrefixSum2D {
                 board[i][j + 1] += board[i][j];
             }
         }
-        h++;
-        w++;
     }
 
     T getSum(int x1, int y1, int x2, int y2) {
-        assert(0 <= x1 && x1 <= x2 && x2 < w);
-        assert(0 <= y1 && y1 <= y2 && y2 < h);
+        assert(0 <= x1 && x1 <= x2 && x2 <= w);
+        assert(0 <= y1 && y1 <= y2 && y2 <= h);
         T val = board[y2][x2] - board[y2][x1] - board[y1][x2] + board[y1][x1];
         return val;
     }
 
     T get(int x, int y) {
-        assert(0 <= x && x < w);
-        assert(0 <= y && y < h);
+        assert(0 <= x && x <= w);
+        assert(0 <= y && y <= h);
         return board[y][x];
     }
 
