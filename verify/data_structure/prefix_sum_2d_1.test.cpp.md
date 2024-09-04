@@ -28,20 +28,20 @@ data:
     \          board[i + 1][j] += board[i][j];\n            }\n        }\n       \
     \ for (int j = 0; j < w; j++) {\n            for (int i = 0; i < h + 1; i++) {\n\
     \                board[i][j + 1] += board[i][j];\n            }\n        }\n \
-    \       h++;\n        w++;\n    }\n\n    T getSum(int x1, int y1, int x2, int\
-    \ y2) {\n        assert(0 <= x1 && x1 <= x2 && x2 < w);\n        assert(0 <= y1\
-    \ && y1 <= y2 && y2 < h);\n        T val = board[y2][x2] - board[y2][x1] - board[y1][x2]\
-    \ + board[y1][x1];\n        return val;\n    }\n\n    T get(int x, int y) {\n\
-    \        assert(0 <= x && x < w);\n        assert(0 <= y && y < h);\n        return\
-    \ board[y][x];\n    }\n\n};\n#line 4 \"verify/data_structure/prefix_sum_2d_1.test.cpp\"\
-    \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
-    \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N; cin >> N;\n    vector<vector<ll>>\
-    \ V(1010, vector<ll>(1010, 0));\n    rep (i, N) {\n        ll x1, y1, x2, y2;\
-    \ cin >> x1 >> y1 >> x2 >> y2;\n        V[y1][x1]++;\n        V[y2][x2]++;\n \
-    \       V[y1][x2]--;\n        V[y2][x1]--;\n    }\n    PrefixSum2D<ll> ps(V);\n\
-    \    ll ans = 0;\n    rep (i, ps.h) {\n        rep (j, ps.w) {\n            ans\
-    \ = max(ans, ps.get(j, i));\n        }\n    }\n    cout << ans << endl;\n\n  \
-    \  return 0;\n}\n"
+    \   }\n\n    T getSum(int x1, int y1, int x2, int y2) {\n        assert(0 <= x1\
+    \ && x1 <= x2 && x2 <= w);\n        assert(0 <= y1 && y1 <= y2 && y2 <= h);\n\
+    \        T val = board[y2][x2] - board[y2][x1] - board[y1][x2] + board[y1][x1];\n\
+    \        return val;\n    }\n\n    T get(int x, int y) {\n        assert(0 <=\
+    \ x && x <= w);\n        assert(0 <= y && y <= h);\n        return board[y][x];\n\
+    \    }\n\n};\n#line 4 \"verify/data_structure/prefix_sum_2d_1.test.cpp\"\nusing\
+    \ namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i = 0; i\
+    \ < (ll)N; i++)\n\nint main() {\n    ll N; cin >> N;\n    vector<vector<ll>> V(1010,\
+    \ vector<ll>(1010, 0));\n    rep (i, N) {\n        ll x1, y1, x2, y2; cin >> x1\
+    \ >> y1 >> x2 >> y2;\n        V[y1][x1]++;\n        V[y2][x2]++;\n        V[y1][x2]--;\n\
+    \        V[y2][x1]--;\n    }\n    PrefixSum2D<ll> ps(V);\n    ll ans = 0;\n  \
+    \  rep (i, ps.h + 1) {\n        rep (j, ps.w + 1) {\n            ans = max(ans,\
+    \ ps.get(j, i));\n        }\n    }\n    cout << ans << endl;\n\n    return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\
     \n#include <bits/stdc++.h>\n#include \"data_structure/prefix_sum_2d.hpp\"\nusing\
     \ namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i = 0; i\
@@ -49,14 +49,15 @@ data:
     \ vector<ll>(1010, 0));\n    rep (i, N) {\n        ll x1, y1, x2, y2; cin >> x1\
     \ >> y1 >> x2 >> y2;\n        V[y1][x1]++;\n        V[y2][x2]++;\n        V[y1][x2]--;\n\
     \        V[y2][x1]--;\n    }\n    PrefixSum2D<ll> ps(V);\n    ll ans = 0;\n  \
-    \  rep (i, ps.h) {\n        rep (j, ps.w) {\n            ans = max(ans, ps.get(j,\
-    \ i));\n        }\n    }\n    cout << ans << endl;\n\n    return 0;\n}"
+    \  rep (i, ps.h + 1) {\n        rep (j, ps.w + 1) {\n            ans = max(ans,\
+    \ ps.get(j, i));\n        }\n    }\n    cout << ans << endl;\n\n    return 0;\n\
+    }"
   dependsOn:
   - data_structure/prefix_sum_2d.hpp
   isVerificationFile: true
   path: verify/data_structure/prefix_sum_2d_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-04 23:46:52+09:00'
+  timestamp: '2024-09-05 00:10:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/data_structure/prefix_sum_2d_1.test.cpp

@@ -88,21 +88,21 @@ data:
   isVerificationFile: false
   path: graph/graph_template.hpp
   requiredBy:
-  - graph/lowest_common_ancestor.hpp
   - graph/strongly_connected_component.hpp
-  - graph/tree_diameter.hpp
   - graph/topological_sort.hpp
-  - graph/bipartite_graph.hpp
+  - graph/tree_diameter.hpp
   - graph/dijkstra.hpp
+  - graph/lowest_common_ancestor.hpp
+  - graph/bipartite_graph.hpp
   timestamp: '2024-09-01 02:25:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/bipartite_graph_1.test.cpp
   - verify/graph/tree_diameter_1.test.cpp
-  - verify/graph/dijkstra_1.test.cpp
-  - verify/graph/topological_sort_2.test.cpp
+  - verify/graph/bipartite_graph_1.test.cpp
   - verify/graph/strongly_connected_component_1.test.cpp
+  - verify/graph/dijkstra_1.test.cpp
   - verify/graph/topological_sort_1.test.cpp
+  - verify/graph/topological_sort_2.test.cpp
   - verify/graph/lowest_common_ancestor_1.test.cpp
 documentation_of: graph/graph_template.hpp
 layout: document
