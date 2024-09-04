@@ -2,6 +2,9 @@
 
 #include <vector>
 
+/**
+ * @brief Union-Find木
+ */
 struct UnionFind {
     private:
     std::vector<int> parents;
