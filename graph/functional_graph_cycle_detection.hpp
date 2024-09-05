@@ -8,37 +8,42 @@
  */
 template<class T> struct FunctionalGraphCycleDetection {
     int n;
+    bool is_directed;
     Graph<T> graph;
-    std::vector<bool> reached, finished;
+    std::vector<bool> reached, finished, in_cycle;
     std::vector<T> history;
 
-    FunctionalGraphCycleDetection(Graph<T> &graph) : n((int)(graph.size())), graph(graph), reached(n, false), finished(n, false) {
-        for (int i = 0; i < n; i++) assert ((int)(graph[i].size()) == 1);
+    FunctionalGraphCycleDetection(Graph<T> &graph, bool is_directed) : n((int)(graph.size())), is_directed(is_directed), graph(graph), reached(n, false), finished(n, false), in_cycle(n, true) {
+        if (is_directed) for (int i = 0; i < n; i++) assert ((int)(graph[i].size()) == 1);
+        build();
     }
 
     /**
-     * @param 頂点vから探索開始
-     * @return サイクルの開始頂点
+     * @brief in_cycleを構築する
      */
-    int search(int v) {
-        do {
-            reached[v] = true;
-            history.push_back(v);
-            v = graph[v][0];
-            // ぐるぐるサイクルを回る = finishedに辿り着かない
-            if (finished[v]) {
-                v = -1;
-                break;
+    void build() {
+        std::queue<int> que;
+        std::vector<int> deg(n, 0);
+        int target = !is_directed;
+        for (int i = 0; i < n; i++) for (auto c: graph[i]) deg[c]++;
+        for (int i = 0; i < n; i++) {
+            if (deg[i] == target) {
+                que.push(i);
+                in_cycle[i] = false;
             }
-        } while (!reached[v]);
-
-        // historyを取り出しながらfinishedを埋める
-        while (!history.empty()) {
-            int v = history.back();
-            finished[v] = true;
-            history.pop_back();
         }
-        return v;
+        while (!que.empty()) {
+            auto v = que.front(); que.pop();
+            for (auto c: graph[v]) {
+                if (!in_cycle[c]) continue;
+                deg[c]--;
+                if (deg[c] == target) {
+                    in_cycle[c] = false;
+                    que.push(c);
+                }
+            }
+        }
+        return;
     }
 
     /**
@@ -47,9 +52,17 @@ template<class T> struct FunctionalGraphCycleDetection {
     std::vector<T> reconstruct(int pos) {
         std::vector<T> cycle;
         int v = pos;
+        int parent = -1;
         do {
             cycle.push_back(v);
-            v = graph[v][0];
+            reached[v] = true;
+            for (auto c: graph[v]) {
+                if (c == parent) continue;
+                if (!in_cycle[c]) continue;
+                v = c;
+                parent = v;
+                break;
+            }
         } while (v != pos);
         return cycle;
     }
@@ -60,11 +73,10 @@ template<class T> struct FunctionalGraphCycleDetection {
     std::vector<std::vector<T>> detect_all() {
         std::vector<std::vector<T>> res;
         for (int v = 0; v < (int)(graph.size()); v++) {
-            if (finished[v]) continue;
-            int pos = search(v);
-            if (pos == -1) continue;
-            std::vector<T> cycle = reconstruct(pos);
+            if (!in_cycle[v] || reached[v]) continue;
+            std::vector<T> cycle = reconstruct(v);
             if (!cycle.empty()) res.push_back(cycle);
+            else assert(false);
         }
         return res;
     }
