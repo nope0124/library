@@ -12,7 +12,7 @@ int main() {
     Graph<Edge<ll>> graph(N);
     rep (i, M) {
         ll a, b, c; cin >> a >> b >> c;
-        graph[a].push_back(Edge<ll>(b, c));
+        graph[a].push_back(Edge<ll>(a, b, c));
     }
 
     Dijkstra<ll> ds(graph, start, INF);

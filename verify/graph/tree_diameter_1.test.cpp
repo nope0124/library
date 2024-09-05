@@ -11,8 +11,8 @@ int main() {
     Graph<Edge<ll>> graph(N);
     rep (i, N - 1) {
         ll a, b, c; cin >> a >> b >> c;
-        graph[a].push_back(Edge<ll>(b, c));
-        graph[b].push_back(Edge<ll>(a, c));
+        graph[a].push_back(Edge<ll>(a, b, c));
+        graph[b].push_back(Edge<ll>(b, a, c));
     }
     cout << tree_diameter(graph) << endl;
 

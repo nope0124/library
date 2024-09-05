@@ -6,10 +6,11 @@
  * @brief グラフテンプレート
  */
 template<class T> struct Edge {
+    int from;
     int to;
     T cost;
 
-    Edge(int to, T cost) : to(to), cost(cost) {}
+    Edge(inf from, int to, T cost) : from(from), to(to), cost(cost) {}
 };
 
 template<class T> struct Graph {
