@@ -9,6 +9,10 @@ data:
     path: graph/dijkstra.hpp
     title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
   - icon: ':heavy_check_mark:'
+    path: graph/functional_graph_cycle_detection.hpp
+    title: "Functional Graph Cycle Detection (Functional Graph\u306E\u30B5\u30A4\u30AF\
+      \u30EB\u691C\u51FA)"
+  - icon: ':heavy_check_mark:'
     path: graph/lowest_common_ancestor.hpp
     title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
   - icon: ':heavy_check_mark:'
@@ -26,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/dijkstra_1.test.cpp
     title: verify/graph/dijkstra_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/functional_graph_cycle_detection.test.cpp
+    title: verify/graph/functional_graph_cycle_detection.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/graph/lowest_common_ancestor_1.test.cpp
     title: verify/graph/lowest_common_ancestor_1.test.cpp
@@ -87,6 +94,7 @@ data:
   - graph/strongly_connected_component.hpp
   - graph/tree_diameter.hpp
   - graph/topological_sort.hpp
+  - graph/functional_graph_cycle_detection.hpp
   - graph/bipartite_graph.hpp
   - graph/dijkstra.hpp
   timestamp: '2024-09-05 13:55:33+09:00'
@@ -94,6 +102,7 @@ data:
   verifiedWith:
   - verify/graph/tree_diameter_1.test.cpp
   - verify/graph/dijkstra_1.test.cpp
+  - verify/graph/functional_graph_cycle_detection.test.cpp
   - verify/graph/strongly_connected_component_1.test.cpp
   - verify/graph/topological_sort_1.test.cpp
   - verify/graph/lowest_common_ancestor_1.test.cpp

@@ -24,6 +24,10 @@ data:
       path: graph/dijkstra.hpp
       title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
     - icon: ':heavy_check_mark:'
+      path: graph/functional_graph_cycle_detection.hpp
+      title: "Functional Graph Cycle Detection (Functional Graph\u306E\u30B5\u30A4\
+        \u30AF\u30EB\u691C\u51FA)"
+    - icon: ':heavy_check_mark:'
       path: graph/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -69,6 +73,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/graph/dijkstra_1.test.cpp
       title: verify/graph/dijkstra_1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/graph/functional_graph_cycle_detection.test.cpp
+      title: verify/graph/functional_graph_cycle_detection.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/graph/lowest_common_ancestor_1.test.cpp
       title: verify/graph/lowest_common_ancestor_1.test.cpp
