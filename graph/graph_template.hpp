@@ -10,7 +10,7 @@ template<class T> struct Edge {
     int to;
     T cost;
 
-    Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+    Edge(int from = -1, int to = -1, T cost = -1) : from(from), to(to), cost(cost) {}
 };
 
 template<class T> struct Graph {
