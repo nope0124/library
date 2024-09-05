@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/lowest_common_ancestor_1.test.cpp
     title: verify/graph/lowest_common_ancestor_1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     links: []
@@ -19,7 +19,7 @@ data:
     #line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\
     \n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
     template<class T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n \
-    \   Edge(inf from, int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\n\
+    \   Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\n\
     template<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
     \ graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>()) {}\n    inline\
     \ std::vector<T>& operator[] (int i) { return graph[i]; }\n    size_t size() const\
@@ -106,8 +106,8 @@ data:
   isVerificationFile: false
   path: graph/lowest_common_ancestor.hpp
   requiredBy: []
-  timestamp: '2024-09-05 12:44:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-09-05 13:06:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/lowest_common_ancestor_1.test.cpp
 documentation_of: graph/lowest_common_ancestor.hpp

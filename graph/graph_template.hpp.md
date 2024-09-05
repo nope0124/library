@@ -5,54 +5,54 @@ data:
   - icon: ':x:'
     path: graph/bipartite_graph.hpp
     title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/lowest_common_ancestor.hpp
     title: "Lowest Common Ancestor (\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/strongly_connected_component.hpp
     title: "Strongly Connected Component (\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
       )"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/topological_sort.hpp
     title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree_diameter.hpp
     title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   _extendedVerifiedWith:
   - icon: ':x:'
     path: verify/graph/bipartite_graph_1.test.cpp
     title: verify/graph/bipartite_graph_1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/dijkstra_1.test.cpp
     title: verify/graph/dijkstra_1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/lowest_common_ancestor_1.test.cpp
     title: verify/graph/lowest_common_ancestor_1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/strongly_connected_component_1.test.cpp
     title: verify/graph/strongly_connected_component_1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/topological_sort_1.test.cpp
     title: verify/graph/topological_sort_1.test.cpp
   - icon: ':x:'
     path: verify/graph/topological_sort_2.test.cpp
     title: verify/graph/topological_sort_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter_1.test.cpp
     title: verify/graph/tree_diameter_1.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     links: []
   bundledCode: "#line 2 \"graph/graph_template.hpp\"\n\n#include <vector>\n\n/**\n\
     \ * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class\
-    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(inf from,\
+    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(int from,\
     \ int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<class T>\
     \ struct Graph {\n    int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int\
     \ n) : n(n), graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[]\
@@ -69,7 +69,7 @@ data:
     \ == n);\n        assert((int)(postorder.size()) == n);\n    }\n};\n"
   code: "#pragma once\n\n#include <vector>\n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
     \u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class T> struct Edge {\n    int\
-    \ from;\n    int to;\n    T cost;\n\n    Edge(inf from, int to, T cost) : from(from),\
+    \ from;\n    int to;\n    T cost;\n\n    Edge(int from, int to, T cost) : from(from),\
     \ to(to), cost(cost) {}\n};\n\ntemplate<class T> struct Graph {\n    int n;\n\
     \    std::vector<std::vector<T>> graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>())\
     \ {}\n    inline std::vector<T>& operator[] (int i) { return graph[i]; }\n   \
@@ -94,8 +94,8 @@ data:
   - graph/topological_sort.hpp
   - graph/bipartite_graph.hpp
   - graph/dijkstra.hpp
-  timestamp: '2024-09-05 12:44:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-09-05 13:06:51+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/graph/bipartite_graph_1.test.cpp
   - verify/graph/tree_diameter_1.test.cpp

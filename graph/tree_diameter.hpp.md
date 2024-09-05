@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: "Dijkstra (\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/graph/tree_diameter_1.test.cpp
     title: verify/graph/tree_diameter_1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
     links: []
   bundledCode: "#line 2 \"graph/tree_diameter.hpp\"\n\n#include <vector>\n#line 2\
     \ \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\n/**\n\
     \ * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class\
-    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(inf from,\
+    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(int from,\
     \ int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<class T>\
     \ struct Graph {\n    int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int\
     \ n) : n(n), graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[]\
@@ -81,8 +81,8 @@ data:
   isVerificationFile: false
   path: graph/tree_diameter.hpp
   requiredBy: []
-  timestamp: '2024-09-05 12:44:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-09-05 13:06:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/tree_diameter_1.test.cpp
 documentation_of: graph/tree_diameter.hpp
