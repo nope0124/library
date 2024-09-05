@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -9,12 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/topological_sort_1.test.cpp
     title: verify/graph/topological_sort_1.test.cpp
-  - icon: ':x:'
-    path: verify/graph/topological_sort_2.test.cpp
-    title: verify/graph/topological_sort_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\
       \u30C8)"
@@ -65,9 +62,8 @@ data:
   path: graph/topological_sort.hpp
   requiredBy: []
   timestamp: '2024-09-05 13:55:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/graph/topological_sort_2.test.cpp
   - verify/graph/topological_sort_1.test.cpp
 documentation_of: graph/topological_sort.hpp
 layout: document
