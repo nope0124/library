@@ -4,6 +4,7 @@
 "verify/data_structure/prefix_sum_2d_1.test.cpp": "2024-09-05 00:10:53 +0900",
 "verify/data_structure/unionfind_1.test.cpp": "2024-09-04 15:53:16 +0900",
 "verify/graph/dijkstra_1.test.cpp": "2024-09-05 13:55:33 +0900",
+"verify/graph/functional_graph_cycle_detection.test.cpp": "2024-09-06 05:08:53 +0900",
 "verify/graph/lowest_common_ancestor_1.test.cpp": "2024-09-05 13:55:33 +0900",
 "verify/graph/strongly_connected_component_1.test.cpp": "2024-09-05 13:55:33 +0900",
 "verify/graph/topological_sort_1.test.cpp": "2024-09-05 13:55:33 +0900",
