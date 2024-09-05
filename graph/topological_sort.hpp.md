@@ -23,8 +23,8 @@ data:
     \ <queue>\n#line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\
     \n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
     template<class T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n \
-    \   Edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\n\
-    template<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
+    \   Edge(int from = -1, int to = -1, T cost = -1) : from(from), to(to), cost(cost)\
+    \ {}\n};\n\ntemplate<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
     \ graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>()) {}\n    inline\
     \ std::vector<T>& operator[] (int i) { return graph[i]; }\n    size_t size() const\
     \ { return graph.size(); }\n\n    std::vector<int> preorder, postorder;\n\n  \
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: graph/topological_sort.hpp
   requiredBy: []
-  timestamp: '2024-09-05 13:06:51+09:00'
+  timestamp: '2024-09-05 13:55:33+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/graph/topological_sort_2.test.cpp

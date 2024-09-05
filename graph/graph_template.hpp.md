@@ -52,14 +52,32 @@ data:
     links: []
   bundledCode: "#line 2 \"graph/graph_template.hpp\"\n\n#include <vector>\n\n/**\n\
     \ * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class\
-    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(int from,\
-    \ int to, T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<class T>\
-    \ struct Graph {\n    int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int\
-    \ n) : n(n), graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[]\
-    \ (int i) { return graph[i]; }\n    size_t size() const { return graph.size();\
-    \ }\n\n    std::vector<int> preorder, postorder;\n\n    /**\n     * @brief \u884C\
-    \u304D\u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\u914D\u5217\
-    \u3092\u4F5C\u308B\n     */\n    void calculateOrder() {\n        std::vector<bool>\
+    \ T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n    Edge(int from\
+    \ = -1, int to = -1, T cost = -1) : from(from), to(to), cost(cost) {}\n};\n\n\
+    template<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
+    \ graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>()) {}\n    inline\
+    \ std::vector<T>& operator[] (int i) { return graph[i]; }\n    size_t size() const\
+    \ { return graph.size(); }\n\n    std::vector<int> preorder, postorder;\n\n  \
+    \  /**\n     * @brief \u884C\u304D\u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\
+    \u9806\u306E\u914D\u5217\u3092\u4F5C\u308B\n     */\n    void calculateOrder()\
+    \ {\n        std::vector<bool> reached(n, false);\n        auto dfs = [&](auto\
+    \ f, int v, int p) -> void {\n            if (reached[v]) return;\n          \
+    \  reached[v] = true;\n            preorder.push_back(v);\n            for (auto\
+    \ c: graph[v]) {\n                if (c == p) continue;\n                f(f,\
+    \ c, v);\n            }\n            postorder.push_back(v);\n            return;\n\
+    \        };\n\n        for (int i = 0; i < n; i++) if (!reached[i]) dfs(dfs, i,\
+    \ -1);\n\n        assert((int)(preorder.size()) == n);\n        assert((int)(postorder.size())\
+    \ == n);\n    }\n};\n"
+  code: "#pragma once\n\n#include <vector>\n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
+    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class T> struct Edge {\n    int\
+    \ from;\n    int to;\n    T cost;\n\n    Edge(int from = -1, int to = -1, T cost\
+    \ = -1) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<class T> struct Graph\
+    \ {\n    int n;\n    std::vector<std::vector<T>> graph;\n\n    Graph(int n) :\
+    \ n(n), graph(n, std::vector<T>()) {}\n    inline std::vector<T>& operator[] (int\
+    \ i) { return graph[i]; }\n    size_t size() const { return graph.size(); }\n\n\
+    \    std::vector<int> preorder, postorder;\n\n    /**\n     * @brief \u884C\u304D\
+    \u304C\u3051\u9806\u3001\u5E30\u308A\u304C\u3051\u9806\u306E\u914D\u5217\u3092\
+    \u4F5C\u308B\n     */\n    void calculateOrder() {\n        std::vector<bool>\
     \ reached(n, false);\n        auto dfs = [&](auto f, int v, int p) -> void {\n\
     \            if (reached[v]) return;\n            reached[v] = true;\n       \
     \     preorder.push_back(v);\n            for (auto c: graph[v]) {\n         \
@@ -67,23 +85,6 @@ data:
     \          postorder.push_back(v);\n            return;\n        };\n\n      \
     \  for (int i = 0; i < n; i++) if (!reached[i]) dfs(dfs, i, -1);\n\n        assert((int)(preorder.size())\
     \ == n);\n        assert((int)(postorder.size()) == n);\n    }\n};\n"
-  code: "#pragma once\n\n#include <vector>\n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
-    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\ntemplate<class T> struct Edge {\n    int\
-    \ from;\n    int to;\n    T cost;\n\n    Edge(int from, int to, T cost) : from(from),\
-    \ to(to), cost(cost) {}\n};\n\ntemplate<class T> struct Graph {\n    int n;\n\
-    \    std::vector<std::vector<T>> graph;\n\n    Graph(int n) : n(n), graph(n, std::vector<T>())\
-    \ {}\n    inline std::vector<T>& operator[] (int i) { return graph[i]; }\n   \
-    \ size_t size() const { return graph.size(); }\n\n    std::vector<int> preorder,\
-    \ postorder;\n\n    /**\n     * @brief \u884C\u304D\u304C\u3051\u9806\u3001\u5E30\
-    \u308A\u304C\u3051\u9806\u306E\u914D\u5217\u3092\u4F5C\u308B\n     */\n    void\
-    \ calculateOrder() {\n        std::vector<bool> reached(n, false);\n        auto\
-    \ dfs = [&](auto f, int v, int p) -> void {\n            if (reached[v]) return;\n\
-    \            reached[v] = true;\n            preorder.push_back(v);\n        \
-    \    for (auto c: graph[v]) {\n                if (c == p) continue;\n       \
-    \         f(f, c, v);\n            }\n            postorder.push_back(v);\n  \
-    \          return;\n        };\n\n        for (int i = 0; i < n; i++) if (!reached[i])\
-    \ dfs(dfs, i, -1);\n\n        assert((int)(preorder.size()) == n);\n        assert((int)(postorder.size())\
-    \ == n);\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/graph_template.hpp
@@ -94,7 +95,7 @@ data:
   - graph/topological_sort.hpp
   - graph/bipartite_graph.hpp
   - graph/dijkstra.hpp
-  timestamp: '2024-09-05 13:06:51+09:00'
+  timestamp: '2024-09-05 13:55:33+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/graph/bipartite_graph_1.test.cpp
