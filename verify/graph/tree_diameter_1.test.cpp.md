@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: verify/graph/tree_diameter_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 13:55:33+09:00'
+  timestamp: '2024-09-15 02:20:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/tree_diameter_1.test.cpp

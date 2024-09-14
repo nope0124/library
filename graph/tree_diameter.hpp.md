@@ -75,14 +75,14 @@ data:
     \ */\ntemplate<class T> int tree_diameter(Graph<Edge<T>> &graph) {\n    Dijkstra<T>\
     \ ds(graph);\n    int idx = max_element(ds.dist.begin(), ds.dist.end()) - ds.dist.begin();\n\
     \    ds.init(idx);\n    return *max_element(ds.dist.begin(), ds.dist.end());\n\
-    }"
+    }\n"
   dependsOn:
   - graph/graph_template.hpp
   - graph/dijkstra.hpp
   isVerificationFile: false
   path: graph/tree_diameter.hpp
   requiredBy: []
-  timestamp: '2024-09-05 13:55:33+09:00'
+  timestamp: '2024-09-15 02:20:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/graph/tree_diameter_1.test.cpp
