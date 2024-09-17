@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/others/is_parenthesis_1.test.cpp
-    title: verify/others/is_parenthesis_1.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     document_title: "\u62EC\u5F27\u5217\u5224\u5B9A"
     links: []
@@ -28,9 +25,8 @@ data:
   path: others/is_parenthesis.hpp
   requiredBy: []
   timestamp: '2024-09-04 03:57:29+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/others/is_parenthesis_1.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: others/is_parenthesis.hpp
 layout: document
 redirect_from:
