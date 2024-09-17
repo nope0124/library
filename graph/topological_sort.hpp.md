@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/graph/topological_sort_1.test.cpp
     title: verify/graph/topological_sort_1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/graph/topological_sort_2.test.cpp
+    title: verify/graph/topological_sort_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,6 +67,7 @@ data:
   timestamp: '2024-09-05 13:55:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/graph/topological_sort_2.test.cpp
   - verify/graph/topological_sort_1.test.cpp
 documentation_of: graph/topological_sort.hpp
 layout: document

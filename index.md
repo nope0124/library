@@ -17,7 +17,7 @@ data:
       title: "Union-Find\u6728"
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/bipartite_graph.hpp
       title: "Bipartite Graph (\u4E8C\u90E8\u30B0\u30E9\u30D5)"
     - icon: ':heavy_check_mark:'
@@ -46,7 +46,7 @@ data:
       title: "Tree Diameter (\u6728\u306E\u76F4\u5F84)"
   - name: others
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: others/is_parenthesis.hpp
       title: "\u62EC\u5F27\u5217\u5224\u5B9A"
     - icon: ':heavy_check_mark:'
@@ -71,6 +71,9 @@ data:
   - name: verify/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/graph/bipartite_graph_1.test.cpp
+      title: verify/graph/bipartite_graph_1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/graph/dijkstra_1.test.cpp
       title: verify/graph/dijkstra_1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -86,10 +89,16 @@ data:
       path: verify/graph/topological_sort_1.test.cpp
       title: verify/graph/topological_sort_1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/graph/topological_sort_2.test.cpp
+      title: verify/graph/topological_sort_2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/graph/tree_diameter_1.test.cpp
       title: verify/graph/tree_diameter_1.test.cpp
   - name: verify/others
     pages:
+    - icon: ':x:'
+      path: verify/others/is_parenthesis_1.test.cpp
+      title: verify/others/is_parenthesis_1.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/others/run_length_encoding_1.test.cpp
       title: verify/others/run_length_encoding_1.test.cpp
