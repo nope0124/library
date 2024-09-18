@@ -20,6 +20,5 @@ int main() {
     BipartiteGraph<ll> bg(graph);
     if (bg.isBipartite) cout << "Yes" << endl;
     else cout << "No" << endl;
-
     return 0;
 }
