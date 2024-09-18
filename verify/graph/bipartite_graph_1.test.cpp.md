@@ -61,7 +61,7 @@ data:
     \    rep (i, M) cin >> B[i], B[i]--;\n    rep (i, M) {\n        graph[A[i]].push_back(B[i]);\n\
     \        graph[B[i]].push_back(A[i]);\n    }\n\n    BipartiteGraph<ll> bg(graph);\n\
     \    if (bg.isBipartite) cout << \"Yes\" << endl;\n    else cout << \"No\" <<\
-    \ endl;\n\n    return 0;\n}\n"
+    \ endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc327/tasks/abc327_d\"\n#include\
     \ <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"graph/bipartite_graph.hpp\"\
     \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
@@ -70,14 +70,14 @@ data:
     \    rep (i, M) cin >> B[i], B[i]--;\n    rep (i, M) {\n        graph[A[i]].push_back(B[i]);\n\
     \        graph[B[i]].push_back(A[i]);\n    }\n\n    BipartiteGraph<ll> bg(graph);\n\
     \    if (bg.isBipartite) cout << \"Yes\" << endl;\n    else cout << \"No\" <<\
-    \ endl;\n\n    return 0;\n}\n"
+    \ endl;\n    return 0;\n}\n"
   dependsOn:
   - graph/graph_template.hpp
   - graph/bipartite_graph.hpp
   isVerificationFile: true
   path: verify/graph/bipartite_graph_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-18 01:14:22+09:00'
+  timestamp: '2024-09-19 03:10:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/bipartite_graph_1.test.cpp
