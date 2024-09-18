@@ -23,7 +23,9 @@ jobs:
           -d refresh_token=${{ secrets.DROPBOX_REFRESH_TOKEN }} \
           -u "${{ secrets.DROPBOX_APP_KEY }}:${{ secrets.DROPBOX_APP_SECRET }}" \
           -H "Content-Type: application/x-www-form-urlencoded")
-        echo "DROPBOX_TOKEN=$(echo $response | jq -r '.access_token')" >> $GITHUB_ENV
+        ACCESS_TOKEN=$(echo $response | jq -r '.access_token')
+        echo "::add-mask::$ACCESS_TOKEN"
+        echo "DROPBOX_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
 
     - name: Run tests
       env:
