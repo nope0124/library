@@ -1,4 +1,4 @@
-#define PROBLEM "https://atcoder.jp/contests/abc223/tasks/abc223_d"
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A"
 #include <bits/stdc++.h>
 #include "graph/graph_template.hpp"
 #include "graph/topological_sort.hpp"
@@ -10,19 +10,13 @@ int main() {
     ll N, M; cin >> N >> M;
     Graph<ll> graph(N);
     rep (i, M) {
-        ll a, b; cin >> a >> b; a--; b--;
+        ll a, b; cin >> a >> b;
         graph[a].push_back(b);
     }
 
     auto V = topological_sort(graph);
-    if ((int)(V.size()) != N) {
-        cout << -1 << endl;
-        return 0;
-    }
-    rep (i, N) {
-        if (i == 0) cout << V[i] + 1;
-        else cout << ' ' << V[i] + 1;
-    }
-    cout << endl;
+    if ((int)(V.size()) != N) cout << 1 << endl;
+    else cout << 0 << endl;
+
     return 0;
 }
