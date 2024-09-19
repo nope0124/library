@@ -69,8 +69,8 @@ data:
   timestamp: '2024-09-04 05:50:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/data_structure/fenwick_tree_1.test.cpp
   - verify/data_structure/inversion_number_1.test.cpp
+  - verify/data_structure/fenwick_tree_1.test.cpp
 documentation_of: data_structure/fenwick_tree.hpp
 layout: document
 redirect_from:

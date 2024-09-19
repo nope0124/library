@@ -15,13 +15,13 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
+    PROBLEM: https://atcoder.jp/contests/abc223/tasks/abc223_d
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
+    - https://atcoder.jp/contests/abc223/tasks/abc223_d
   bundledCode: "#line 1 \"verify/graph/topological_sort_1.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\n#include\
-    \ <bits/stdc++.h>\n#line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\
-    \n\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
+    \ \"https://atcoder.jp/contests/abc223/tasks/abc223_d\"\n#include <bits/stdc++.h>\n\
+    #line 2 \"graph/graph_template.hpp\"\n\n#line 4 \"graph/graph_template.hpp\"\n\
+    \n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\
     template<class T> struct Edge {\n    int from;\n    int to;\n    T cost;\n\n \
     \   Edge(int from = -1, int to = -1, T cost = -1) : from(from), to(to), cost(cost)\
     \ {}\n};\n\ntemplate<class T> struct Graph {\n    int n;\n    std::vector<std::vector<T>>\
@@ -50,24 +50,27 @@ data:
     \ == 0) que.push(c);\n        }\n    }\n\n    return res;\n}\n#line 5 \"verify/graph/topological_sort_1.test.cpp\"\
     \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
     \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M; cin >> N >> M;\n    Graph<ll>\
-    \ graph(N);\n    rep (i, M) {\n        ll a, b; cin >> a >> b;\n        graph[a].push_back(b);\n\
-    \    }\n\n    auto V = topological_sort(graph);\n    if ((int)(V.size()) != N)\
-    \ cout << 1 << endl;\n    else cout << 0 << endl;\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
-    \n#include <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"\
-    graph/topological_sort.hpp\"\nusing namespace std;\ntypedef long long int ll;\n\
-    #define rep(i, N) for(ll i = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M;\
-    \ cin >> N >> M;\n    Graph<ll> graph(N);\n    rep (i, M) {\n        ll a, b;\
-    \ cin >> a >> b;\n        graph[a].push_back(b);\n    }\n\n    auto V = topological_sort(graph);\n\
-    \    if ((int)(V.size()) != N) cout << 1 << endl;\n    else cout << 0 << endl;\n\
-    \n    return 0;\n}\n"
+    \ graph(N);\n    rep (i, M) {\n        ll a, b; cin >> a >> b; a--; b--;\n   \
+    \     graph[a].push_back(b);\n    }\n\n    auto V = topological_sort(graph);\n\
+    \    if ((int)(V.size()) != N) {\n        cout << -1 << endl;\n        return\
+    \ 0;\n    }\n    rep (i, N) {\n        if (i == 0) cout << V[i] + 1;\n       \
+    \ else cout << ' ' << V[i] + 1;\n    }\n    cout << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc223/tasks/abc223_d\"\n#include\
+    \ <bits/stdc++.h>\n#include \"graph/graph_template.hpp\"\n#include \"graph/topological_sort.hpp\"\
+    \nusing namespace std;\ntypedef long long int ll;\n#define rep(i, N) for(ll i\
+    \ = 0; i < (ll)N; i++)\n\nint main() {\n    ll N, M; cin >> N >> M;\n    Graph<ll>\
+    \ graph(N);\n    rep (i, M) {\n        ll a, b; cin >> a >> b; a--; b--;\n   \
+    \     graph[a].push_back(b);\n    }\n\n    auto V = topological_sort(graph);\n\
+    \    if ((int)(V.size()) != N) {\n        cout << -1 << endl;\n        return\
+    \ 0;\n    }\n    rep (i, N) {\n        if (i == 0) cout << V[i] + 1;\n       \
+    \ else cout << ' ' << V[i] + 1;\n    }\n    cout << endl;\n    return 0;\n}\n"
   dependsOn:
   - graph/graph_template.hpp
   - graph/topological_sort.hpp
   isVerificationFile: true
   path: verify/graph/topological_sort_1.test.cpp
   requiredBy: []
-  timestamp: '2024-09-05 13:55:33+09:00'
+  timestamp: '2024-09-19 16:48:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/graph/topological_sort_1.test.cpp
