@@ -16,7 +16,6 @@ jobs:
       run: pip3 install -U online-judge-verify-helper
 
     - name: Refresh Dropbox Token
-      id: get_access_token
       run: |
         response=$(curl -X POST https://api.dropbox.com/oauth2/token \
           -d grant_type=refresh_token \
